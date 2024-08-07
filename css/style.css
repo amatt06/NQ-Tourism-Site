@@ -35,7 +35,7 @@ nav ul li a {
 }
 
 section {
-    padding: 2rem;
+    padding: 4rem;
 }
 
 #hero {
@@ -64,17 +64,19 @@ sl-button {
 sl-progress-bar {
     width: 100%;
     margin-top: 1rem;
+    --indicator-color: #ff7043;
 }
 
 sl-tab-group {
     margin-top: 2rem;
+    --indicator-color: #ff7043; /* Coral orange active tab */
 }
 
 sl-tooltip {
     margin-top: 1rem;
 }
 
-sl-switch {
+sl-switch::part(base) {
     margin-top: 1rem;
 }
 
