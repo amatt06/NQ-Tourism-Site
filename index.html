@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css"/>
     <script src="./js/main.js"></script>
-    <script type="module"
-            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
 </head>
 <body>
 <header>
@@ -25,27 +24,33 @@
 
 <section id="hero">
     <h1>Welcome to North Queensland Tourism</h1>
-    <sl-button type="primary">Start</sl-button>
+    <p>Discover the beauty and adventure of North Queensland</p>
+    <sl-button type="primary">Learn More</sl-button>
 </section>
 
 <section id="gallery">
     <h2>Image Gallery</h2>
+    <p>Explore our beautiful image gallery.</p>
     <sl-progress-bar value="50"></sl-progress-bar>
 </section>
 
 <section id="explore">
     <h2>Explore Map</h2>
-    <sl-tab slot="nav" panel="home">Home</sl-tab>
-    <sl-tab slot="nav" panel="features">Features</sl-tab>
-    <sl-tab slot="nav" panel="settings">Settings</sl-tab>
+    <p>Find your next adventure on our interactive map.</p>
+    <sl-tab-group>
+        <sl-tab slot="nav" panel="home">Home</sl-tab>
+        <sl-tab slot="nav" panel="features">Features</sl-tab>
+        <sl-tab slot="nav" panel="settings">Settings</sl-tab>
 
-    <sl-tab-panel name="home">Home Panel</sl-tab-panel>
-    <sl-tab-panel name="features">Features Panel</sl-tab-panel>
-    <sl-tab-panel name="settings">Settings Panel</sl-tab-panel>
+        <sl-tab-panel name="home">Home Panel</sl-tab-panel>
+        <sl-tab-panel name="features">Features Panel</sl-tab-panel>
+        <sl-tab-panel name="settings">Settings Panel</sl-tab-panel>
+    </sl-tab-group>
 </section>
 
 <section id="experiences">
     <h2>User-generated Content</h2>
+    <p>See what others are saying about their experiences.</p>
     <sl-tooltip content="Tooltip content">
         <button>Hover me</button>
     </sl-tooltip>
@@ -53,7 +58,17 @@
 
 <section id="itinerary">
     <h2>Itinerary Form</h2>
-    <sl-switch>Toggle me</sl-switch>
+    <p>Create your perfect travel itinerary.</p>
+    <form>
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination">
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" name="start-date">
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date" name="end-date">
+        <sl-switch>Toggle Options</sl-switch>
+        <sl-button type="primary" submit>Submit</sl-button>
+    </form>
 </section>
 
 <footer>

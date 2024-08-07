@@ -9,7 +9,7 @@ body {
 
 header {
     background: #F5F5DE;
-    color: white;
+    color: #1E1E1E;
     padding: 1rem;
 }
 
@@ -17,6 +17,8 @@ nav ul {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
