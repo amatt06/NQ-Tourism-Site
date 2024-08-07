@@ -3,32 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Website</title>
+    <title>North Queensland Tourism</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script type="module" src=""></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css"/>
+    <script src="./js/main.js"></script>
+    <script type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
 </head>
 <body>
 <header>
-    <h1>Welcome to My Final Website</h1>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#itinerary">Itinerary</a></li>
+        </ul>
+    </nav>
 </header>
-<nav>
-    <!-- Navigation links go here -->
-</nav>
-<main>
-    <!-- Main content goes here -->
-    <section id="hero">
-        <h2>Hero Section</h2>
-    </section>
-    <section id="gallery">
-        <h2>Image Gallery</h2>
-    </section>
-    <section id="content">
-        <h2>Content Section</h2>
-    </section>
-</main>
+
+<section id="hero">
+    <h1>Welcome to North Queensland Tourism</h1>
+    <sl-button type="primary">Learn More</sl-button>
+</section>
+
+<section id="gallery">
+    <h2>Image Gallery</h2>
+    <sl-progress-bar value="50"></sl-progress-bar>
+</section>
+
+<section id="explore">
+    <h2>Explore Map</h2>
+    <sl-tab slot="nav" panel="home">Home</sl-tab>
+    <sl-tab slot="nav" panel="features">Features</sl-tab>
+    <sl-tab slot="nav" panel="settings">Settings</sl-tab>
+
+    <sl-tab-panel name="home">Home Panel</sl-tab-panel>
+    <sl-tab-panel name="features">Features Panel</sl-tab-panel>
+    <sl-tab-panel name="settings">Settings Panel</sl-tab-panel>
+</section>
+
+<section id="experiences">
+    <h2>User-generated Content</h2>
+    <sl-tooltip content="Tooltip content">
+        <button>Hover me</button>
+    </sl-tooltip>
+</section>
+
+<section id="itinerary">
+    <h2>Itinerary Form</h2>
+    <sl-switch>Toggle me</sl-switch>
+</section>
+
 <footer>
     <p>&copy; 2024 Adam Matthews - DIG24 Assignment 3</p>
 </footer>
-<script src="./js/main.js"></script>
+
 </body>
 </html>

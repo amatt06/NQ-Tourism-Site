@@ -1,0 +1,78 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #009688;
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+section {
+    padding: 2rem;
+}
+
+#hero {
+    background: url('hero.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+footer {
+    background: #004d40;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Shoelace component styles */
+sl-button {
+    margin-top: 1rem;
+}
+
+sl-progress-bar {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+sl-tab-group {
+    margin-top: 2rem;
+}
+
+sl-tooltip {
+    margin-top: 1rem;
+}
+
+sl-switch {
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}
