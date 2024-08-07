@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background: #009688;
+    background: #F5F5DE;
     color: white;
     padding: 1rem;
 }
@@ -20,7 +20,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    color: #1E1E1E;
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
@@ -30,19 +30,19 @@ section {
 }
 
 #hero {
-    background: url('hero.jpg') no-repeat center center/cover;
+    background: url('../img/hero.jpeg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #F5F5DE;
     text-align: center;
 }
 
 footer {
-    background: #004d40;
-    color: white;
+    background: #F5F5DE;
+    color: #1E1E1E;
     text-align: center;
     padding: 1rem;
 }
