@@ -18,6 +18,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
 }
 
 nav ul {
@@ -26,12 +27,26 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    position: relative;
+}
+
+nav ul li {
+    position: relative;
 }
 
 nav ul li a {
     color: #1E1E1E;
     text-decoration: none;
     padding: 0.5rem 1rem;
+}
+
+#nav-indicator {
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: 0;
+    background: #ff7043;
+    transition: all 0.4s ease;
 }
 
 section {
@@ -59,12 +74,14 @@ footer {
 /* Shoelace component styles */
 sl-button {
     margin-top: 1rem;
+    --sl-button-background-color: #ff7043; /* Coral orange button */
+    --sl-button-color: #FFFFFF; /* White text */
 }
 
 sl-progress-bar {
     width: 100%;
     margin-top: 1rem;
-    --indicator-color: #ff7043;
+    --indicator-color: #ff7043; /* Coral orange progress bar */
 }
 
 sl-tab-group {
@@ -74,10 +91,12 @@ sl-tab-group {
 
 sl-tooltip {
     margin-top: 1rem;
+    --tooltip-background-color: #ff7043; /* Coral orange tooltip */
 }
 
 sl-switch::part(base) {
     margin-top: 1rem;
+    --thumb-color: #ff7043; /* Coral orange switch */
 }
 
 /* Responsive Design */
