@@ -41,6 +41,11 @@ nav ul li a {
     padding: 0.5rem 1rem;;
 }
 
+nav ul li a:hover {
+    color: #009688;
+    border-radius: 4px;
+}
+
 #nav-indicator {
     position: absolute;
     bottom: 0;
