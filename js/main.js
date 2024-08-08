@@ -27,7 +27,7 @@ function smoothScroll(event) {
     event.preventDefault();
     const targetId = event.currentTarget.getAttribute('href').substring(1);
     const targetSection = document.getElementById(targetId);
-    const headerOffset = 70;
+    const headerOffset = 10;
     const elementPosition = targetSection.offsetTop;
     const offsetPosition = elementPosition - headerOffset;
 
@@ -49,7 +49,7 @@ function updateNavIndicator() {
 
     // Determine the current section based on scroll position
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 70;
+        const sectionTop = section.offsetTop - 50;
         if (window.scrollY >= sectionTop) {
             currentSection = section.getAttribute('id');
         }
