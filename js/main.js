@@ -1,3 +1,5 @@
+// main.js
+
 /**
  * Utility function to debounce events.
  * Delays the processing of the event handler until after a specified wait time has elapsed since the last event.
@@ -33,7 +35,8 @@ function ease(t, b, c, d) {
  */
 function smoothScroll(target, duration) {
     const start = window.scrollY;
-    const targetPosition = document.querySelector(target).offsetTop - 20;
+    const navbarHeight = document.querySelector('nav').offsetHeight - 1;
+    const targetPosition = document.querySelector(target).offsetTop - navbarHeight;
     const distance = targetPosition - start;
     let startTime = null;
 
@@ -60,7 +63,8 @@ function updateNavIndicator() {
 
     // Determine the current section based on scroll position
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 40;
+        const navbarHeight = document.querySelector('nav').offsetHeight;
+        const sectionTop = section.offsetTop - navbarHeight;
         if (window.scrollY >= sectionTop) {
             currentSection = section.getAttribute('id');
         }
@@ -92,7 +96,7 @@ function initNavIndicator() {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            smoothScroll(targetId, 550); // Adjust the duration (in ms) as needed
+            smoothScroll(targetId, 700);
         });
     });
 }
