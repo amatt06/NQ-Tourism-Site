@@ -44,6 +44,7 @@ nav ul li a {
 nav ul li a:hover {
     color: #009688;
     border-radius: 4px;
+    transition: color 0.2s ease;
 }
 
 #nav-indicator {
