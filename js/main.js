@@ -1,5 +1,3 @@
-// main.js
-
 /**
  * Utility function to debounce events.
  * Delays the processing of the event handler until after a specified wait time has elapsed since the last event.
@@ -19,22 +17,35 @@ function debounce(func, wait = 10, immediate = true) {
     };
 }
 
-
-/** Smoothly scrolls to the target section when a navigation link is clicked.
- * Offsets the sticky navbar.
+/**
+ * Easing function for smooth scrolling.
  */
-function smoothScroll(event) {
-    event.preventDefault();
-    const targetId = event.currentTarget.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    const headerOffset = 10;
-    const elementPosition = targetSection.offsetTop;
-    const offsetPosition = elementPosition - headerOffset;
+function ease(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+}
 
-    window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-    });
+/**
+ * Smoothly scrolls to the target section when a navigation link is clicked.
+ * Offsets for the sticky navbar.
+ */
+function smoothScroll(target, duration) {
+    const start = window.scrollY;
+    const targetPosition = document.querySelector(target).offsetTop - 20;
+    const distance = targetPosition - start;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, start, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    requestAnimationFrame(animation);
 }
 
 /**
@@ -49,7 +60,7 @@ function updateNavIndicator() {
 
     // Determine the current section based on scroll position
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 50;
+        const sectionTop = section.offsetTop - 40;
         if (window.scrollY >= sectionTop) {
             currentSection = section.getAttribute('id');
         }
@@ -70,20 +81,26 @@ function updateNavIndicator() {
 
 /**
  * Initialises the navigation indicator and sets up event listeners for scroll and resize events.
- * Calls the updateNavIndicator function to ensure the indicator is in the correct initial position.
+ * Also sets up smooth scrolling for navigation links.
  */
 function initNavIndicator() {
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', smoothScroll);
-    });
     window.addEventListener('scroll', debounce(updateNavIndicator));
     window.addEventListener('resize', debounce(updateNavIndicator));
     updateNavIndicator();
+
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            smoothScroll(targetId, 550); // Adjust the duration (in ms) as needed
+        });
+    });
 }
 
-
-//Main initialisation function.
+/**
+ * Main initialisation function.
+ * Sets up the navigation indicator.
+ */
 function init() {
     initNavIndicator();
 }
