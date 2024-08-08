@@ -16,7 +16,7 @@ function debounce(func, wait = 10, immediate = true) {
     };
 }
 
-// Function to update the position and width of the navigation indicator
+// Update the position and width of the navigation indicator
 function updateNavIndicator() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -25,7 +25,7 @@ function updateNavIndicator() {
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 70; // Adjust for sticky header
-        if (pageYOffset >= sectionTop) {
+        if (window.scrollY >= sectionTop) {
             currentSection = section.getAttribute('id');
         }
     });
