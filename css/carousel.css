@@ -1,0 +1,91 @@
+/* carousel.css */
+
+/* Gallery Container */
+.gallery-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.image-gallery {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.image-gallery li {
+    flex: 0 0 calc(100% / 3);
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Titles and Descriptions */
+.image-gallery h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.image-gallery p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Navigation Buttons */
+button.prev, button.next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Progress Bar */
+.gallery-progress {
+    width: 100%;
+    --indicator-color: #ff7043;
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .image-gallery li {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-gallery li {
+        flex: 0 0 100%;
+    }
+}

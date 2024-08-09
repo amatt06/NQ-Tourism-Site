@@ -35,7 +35,7 @@ function ease(t, b, c, d) {
  */
 function smoothScroll(target, duration) {
     const start = window.scrollY;
-    const navbarHeight = document.querySelector('nav').offsetHeight - 1;
+    const navbarHeight = document.querySelector('nav').offsetHeight;
     const targetPosition = document.querySelector(target).offsetTop - navbarHeight;
     const distance = targetPosition - start;
     let startTime = null;
@@ -64,7 +64,7 @@ function updateNavIndicator() {
     // Determine the current section based on scroll position
     sections.forEach(section => {
         const navbarHeight = document.querySelector('nav').offsetHeight;
-        const sectionTop = section.offsetTop - navbarHeight;
+        const sectionTop = section.offsetTop - navbarHeight - 1;
         if (window.scrollY >= sectionTop) {
             currentSection = section.getAttribute('id');
         }

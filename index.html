@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North Queensland Tourism</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/carousel.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css"/>
     <script src="./js/main.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+    <script src="./js/carousel.js" defer></script>
+    <script type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+          rel="stylesheet">
 </head>
 <body>
 <header>
@@ -35,8 +39,49 @@
 <section id="gallery">
     <h2>Image Gallery</h2>
     <p>Explore our beautiful image gallery.</p>
-    <sl-progress-bar value="50"></sl-progress-bar>
+
+    <!-- Image gallery container -->
+    <div class="gallery-container">
+        <button class="prev">&lt;</button> <!-- Previous Button -->
+        <ul class="image-gallery">
+            <li>
+                <img src="./img/reef.webp" alt="Great Barrier Reef">
+                <h3>Great Barrier Reef</h3>
+                <p>This is a longer description of image 1.</p>
+            </li>
+            <li>
+                <img src="./img/daintree.jpeg" alt="Daintree Rainforest">
+                <h3>Daintree Rainforest</h3>
+                <p>This is a longer description of image 2.</p>
+            </li>
+            <li>
+                <img src="./img/mg-island.jpeg" alt="Magnetic Island">
+                <h3>Magnetic Island</h3>
+                <p>This is a longer description of image 3.</p>
+            </li>
+            <li>
+                <img src="./img/mg-island.jpeg" alt="Magnetic Island">
+                <h3>Image Title 3</h3>
+                <p>This is a longer description of image 3.</p>
+            </li>
+            <li>
+                <img src="./img/mg-island.jpeg" alt="Magnetic Island">
+                <h3>Image Title 3</h3>
+                <p>This is a longer description of image 3.</p>
+            </li>
+            <li>
+                <img src="./img/mg-island.jpeg" alt="Magnetic Island">
+                <h3>Image Title 3</h3>
+                <p>This is a longer description of image 3.</p>
+            </li>
+        </ul>
+        <button class="next">&gt;</button> <!-- Next Button -->
+    </div>
+
+    <!-- Progress bar -->
+    <sl-progress-bar class="gallery-progress" value="0"></sl-progress-bar>
 </section>
+
 
 <section id="explore">
     <h2>Explore Map</h2>
