@@ -60,12 +60,15 @@ function updateNavIndicator() {
     const navLinks = document.querySelectorAll('nav ul li a');
     const navIndicator = document.getElementById('nav-indicator');
     let currentSection = '';
+    let maxVisibleHeight = 0;
 
-    // Determine the current section based on scroll position
+    // Determine which section is mostly visible
     sections.forEach(section => {
-        const navbarHeight = document.querySelector('nav').offsetHeight;
-        const sectionTop = section.offsetTop - navbarHeight - 1;
-        if (window.scrollY >= sectionTop) {
+        const rect = section.getBoundingClientRect();
+        const visibleHeight = Math.min(window.innerHeight, rect.bottom) - Math.max(0, rect.top);
+
+        if (visibleHeight > maxVisibleHeight) {
+            maxVisibleHeight = visibleHeight;
             currentSection = section.getAttribute('id');
         }
     });
