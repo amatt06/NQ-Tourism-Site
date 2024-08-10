@@ -51,26 +51,35 @@
     padding: 0 20px;
 }
 
-/* Navigation Buttons */
+/* Navigation Button - Next */
 button.next {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #009688;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
     position: absolute;
     top: 50%;
+    right: 10px;
     transform: translateY(-50%);
     z-index: 1000;
-}
-
-button.next {
-    right: 10px;
+    border-radius: 50%; /* Make the button circular */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
 }
 
 button.next:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #00796b; /* Darker blue on hover */
+    transform: translateY(-50%) scale(1.1); /* Enlarge slightly on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Add more shadow on hover */
 }
+
 
 /* Progress Bar */
 .gallery-progress {
