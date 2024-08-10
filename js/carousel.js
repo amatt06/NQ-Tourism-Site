@@ -1,6 +1,5 @@
 // carousel.js
 
-const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
 const gallery = document.querySelector('.image-gallery');
 const progressBar = document.querySelector('sl-progress-bar');
@@ -23,13 +22,6 @@ function updateCarousel() {
     gallery.style.transform = `translateX(-${scrollPosition * imageWidth}px)`;
     progressBar.value = ((scrollPosition + visibleImages) / gallery.children.length) * 100;
 }
-
-prevButton.addEventListener('click', () => {
-    if (scrollPosition > 0) {
-        scrollPosition--;
-        updateCarousel();
-    }
-});
 
 nextButton.addEventListener('click', () => {
     const visibleImages = getVisibleImages();

@@ -25,11 +25,11 @@
 }
 
 .image-gallery img {
-    width: 100%;
-    height: 55vh; /* Adjust the height to fill more of the viewport */
-    object-fit: cover; /* Ensures the image covers the entire area */
-    transition: transform 0.6s ease;
-    border-radius: 6px;
+    width: 85%;
+    height: 53vh;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    border-radius: 8px;
 }
 
 
@@ -47,7 +47,8 @@
 .image-gallery p {
     font-size: 1rem;
     color: #555;
-    margin-bottom: 0;
+    margin-bottom: 2vh;
+    padding: 0 20px;
 }
 
 /* Navigation Buttons */
@@ -79,8 +80,8 @@ button.prev:hover, button.next:hover {
 .gallery-progress {
     width: 80%;
     --indicator-color: #ff7043;
-    margin-top: 1rem;
-    --height: 3px;
+    margin-top: 2vh;
+    --height: 2px;
     padding-left: 20%;
 }
 
@@ -88,6 +89,11 @@ button.prev:hover, button.next:hover {
 @media (max-width: 768px) {
     .image-gallery li {
         flex: 0 0 50%;
+    }
+
+    .image-gallery img {
+        width: 92%;
+        height: 43vh;
     }
 }
 
