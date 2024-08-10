@@ -99,7 +99,7 @@ function initNavIndicator() {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            smoothScroll(targetId, 700);
+            smoothScroll(targetId, 1200);
         });
     });
 }
