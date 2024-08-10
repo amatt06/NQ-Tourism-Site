@@ -52,7 +52,7 @@
 }
 
 /* Navigation Buttons */
-button.prev, button.next {
+button.next {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
@@ -64,15 +64,11 @@ button.prev, button.next {
     z-index: 1000;
 }
 
-button.prev {
-    left: 10px;
-}
-
 button.next {
     right: 10px;
 }
 
-button.prev:hover, button.next:hover {
+button.next:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
