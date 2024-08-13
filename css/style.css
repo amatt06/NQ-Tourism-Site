@@ -188,8 +188,88 @@ button.next:hover {
 }
 
 /* Experiences Section */
+/* Experiences Section */
+.experiences-section {
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+}
 
+.experiences-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #006064; /* Dark teal to match North Queensland themes */
+}
 
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.experience-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.experience-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.experience-item:hover img {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.experience-item .testimonial {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.experience-item:hover .testimonial {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.experience-item {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.sl-tooltip::part(base) {
+    background-color: #006064; /* Dark teal tooltip background */
+    color: white;
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.sl-tooltip::part(base)::after {
+    border-top-color: #006064; /* Match the tooltip arrow color */
+}
 
 /* Shoelace component styles */
 sl-button {
