@@ -194,13 +194,18 @@ button.next:hover {
 }
 
 /* Experiences Section */
-.experiences-section {
+#experiences {
     padding: 4rem 2rem;
-    background-color: #f4f4f4;
+    margin-bottom: 6vh;
 }
 
 .experiences-title {
     text-align: center;
+}
+
+#experiences-descriptor {
+    text-align: center;
+    margin-bottom: 5vh;
 }
 
 .experiences-grid {
@@ -276,6 +281,10 @@ button.next:hover {
 
 /* Itinerary Section */
 .itinerary-title {
+    text-align: right;
+}
+
+#itinerary-descriptor {
     text-align: right;
 }
 
