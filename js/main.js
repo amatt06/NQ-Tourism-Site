@@ -95,7 +95,7 @@ function initNavIndicator() {
     window.addEventListener('resize', debounce(updateNavIndicator));
     updateNavIndicator();
 
-    document.querySelectorAll('nav ul li a').forEach(anchor => {
+    document.querySelectorAll('nav ul li a' && 'a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
