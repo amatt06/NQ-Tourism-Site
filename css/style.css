@@ -306,6 +306,12 @@ input {
     font-family: "Josefin Sans", sans-serif;
 }
 
+label {
+    padding: 0.5rem 0 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
 #locations {
     display: flex;
     flex-wrap: wrap;
@@ -331,7 +337,6 @@ input {
 .switch-label {
     display: inline-block;
     margin-right: 1rem;
-    font-size: 1rem;
     color: #333;
 }
 
