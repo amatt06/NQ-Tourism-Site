@@ -280,12 +280,54 @@ button.next:hover {
 }
 
 /* Itinerary Section */
-.itinerary-title {
+#itinerary {
+    padding: 4rem;
+}
+
+#itinerary p {
     text-align: right;
 }
 
-#itinerary-descriptor {
+.itinerary-title {
     text-align: right;
+    font-size: 2.5rem;
+    color: #009688;
+}
+
+#itinerary-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#locations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.bubble {
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 15px; /* Changed from 30% to 15px for rectangular shape */
+    padding: 0.5rem 1rem; /* Reduced padding for less space between text and edges */
+    margin: 0.25rem; /* Added small margin to prevent cutting off */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bubble:hover {
+    background-color: #00796b;
+}
+
+#confirmation-message {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #009688;
 }
 
 /* Shoelace component styles */

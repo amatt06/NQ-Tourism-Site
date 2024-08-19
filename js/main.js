@@ -105,11 +105,37 @@ function initNavIndicator() {
 }
 
 /**
+ * Initializes the itinerary form interactions.
+ * Handles form submission, showing a confirmation message, and managing Shoelace components.
+ */
+function initItineraryForm() {
+    const form = document.getElementById('itinerary-form');
+    const confirmationMessage = document.getElementById('confirmation-message');
+    const submitButton = document.getElementById('submit-btn');
+    const switchElement = document.getElementById('confirm-switch');
+
+    // Handle form submission
+    submitButton.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Check if the switch is toggled on before allowing form submission
+        if (switchElement.checked) {
+            form.style.display = 'none';
+            confirmationMessage.style.display = 'block';
+        } else {
+            alert('Please confirm your itinerary before submitting.');
+        }
+    });
+}
+
+
+/**
  * Main initialisation function.
  * Sets up the navigation indicator.
  */
 function init() {
     initNavIndicator();
+    initItineraryForm()
 }
 
 /**

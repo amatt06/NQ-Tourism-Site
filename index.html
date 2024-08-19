@@ -99,7 +99,8 @@
 
 <section id="experiences">
     <h2 class="experiences-title">Experiences</h2>
-    <p id="experiences-descriptor" class="descriptor">Discover firsthand accounts from travelers who have explored the wonders of North Queensland.</p>
+    <p id="experiences-descriptor" class="descriptor">Discover firsthand accounts from travelers who have explored the
+        wonders of North Queensland.</p>
     <div class="experiences-grid">
 
         <!-- Experience 1 -->
@@ -158,17 +159,36 @@
 
 <section id="itinerary">
     <h2 class="itinerary-title">Your Itinerary</h2>
-    <p id="itinerary-descriptor" class="descriptor">Create your personalised travel itinerary!</p>
-    <form>
-        <label for="destination">Destination:</label>
-        <input type="text" id="destination" name="destination">
-        <label for="start-date">Start Date:</label>
-        <input type="date" id="start-date" name="start-date">
-        <label for="end-date">End Date:</label>
-        <input type="date" id="end-date" name="end-date">
-        <sl-switch>Toggle Options</sl-switch>
-        <sl-button type="primary" submit>Submit</sl-button>
+    <p id="itinerary-descriptor" class="descriptor">Get your personalised travel itinerary!</p>
+    <form id="itinerary-form">
+        <label for="locations">Select Locations:</label>
+        <div id="locations">
+            <sl-tooltip content="Great Barrier Reef">
+                <button type="button" class="bubble" data-location="Great Barrier Reef">Great Barrier Reef</button>
+            </sl-tooltip>
+            <sl-tooltip content="Daintree Rainforest">
+                <button type="button" class="bubble" data-location="Daintree Rainforest">Daintree Rainforest</button>
+            </sl-tooltip>
+            <!-- Add more location bubbles here as needed -->
+        </div>
+
+        <label for="people">Number of People:</label>
+        <input type="number" id="people" name="people" min="1" max="20" required>
+
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <sl-switch id="confirm-switch">I confirm my itinerary</sl-switch>
+
+        <sl-button type="primary" id="submit-btn">Submit</sl-button>
     </form>
+
+    <div id="confirmation-message" style="display: none;">
+        <p>Thank you for creating your itinerary! We will send you the details shortly.</p>
+    </div>
 </section>
 
 <footer>
