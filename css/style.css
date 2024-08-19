@@ -341,6 +341,7 @@ sl-switch {
     --track-width: 48px;
     --focus-ring-color: #009688;
     text-align: center;
+    --sl-switch-size: 10rem;
 }
 
 /* Tooltip styling */
@@ -365,19 +366,6 @@ sl-tooltip::part(arrow) {
     margin-top: 2rem;
     font-size: 1.2rem;
     color: #009688;
-}
-
-/* Shoelace component styles */
-sl-button {
-    margin-top: 1rem;
-    --sl-button-background-color: #ff7043; /* Coral orange button */
-    --sl-button-color: #FFFFFF; /* White text */
-}
-
-sl-progress-bar {
-    width: 100%;
-    margin-top: 1rem;
-    --indicator-color: #ff7043; /* Coral orange progress bar */
 }
 
 /* Responsive Design */
