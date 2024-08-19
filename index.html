@@ -163,13 +163,14 @@
     <form id="itinerary-form">
         <label for="locations">Select Locations:</label>
         <div id="locations">
-            <sl-tooltip content="Great Barrier Reef">
-                <button type="button" class="bubble" data-location="Great Barrier Reef">Great Barrier Reef</button>
-            </sl-tooltip>
-            <sl-tooltip content="Daintree Rainforest">
-                <button type="button" class="bubble" data-location="Daintree Rainforest">Daintree Rainforest</button>
-            </sl-tooltip>
-            <!-- Add more location bubbles here as needed -->
+            <button type="button" class="bubble" data-location="Great Barrier Reef">Great Barrier Reef</button>
+            <button type="button" class="bubble" data-location="Daintree Rainforest">Daintree Rainforest</button>
+            <button type="button" class="bubble" data-location="Magnetic Island">Magnetic Island</button>
+            <button type="button" class="bubble" data-location="Paronella Park">Paronella Park</button>
+            <button type="button" class="bubble" data-location="Atherton Tablelands">Atherton Tablelands</button>
+            <button type="button" class="bubble" data-location="Milaa Milaa Falls">Milaa Milaa Falls</button>
+            <button type="button" class="bubble" data-location="Whitsunday Islands">Whitsunday Islands</button>
+            <button type="button" class="bubble" data-location="Cape Tribulation">Cape Tribulation</button>
         </div>
 
         <label for="people">Number of People:</label>
@@ -181,7 +182,12 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
-        <sl-switch id="confirm-switch">I confirm my itinerary</sl-switch>
+        <!-- Guided Tours Switch with Tooltip -->
+        <sl-tooltip
+                content="Add a guided tour to enhance your travel experience with expert insights and exclusive access.">
+            <label for="guided-tours-switch" class="switch-label">Include Guided Tours</label>
+            <sl-switch id="guided-tours-switch"></sl-switch>
+        </sl-tooltip>
 
         <sl-button type="primary" id="submit-btn">Submit</sl-button>
     </form>

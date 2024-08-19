@@ -312,11 +312,48 @@ button.next:hover {
     background-color: #009688;
     color: white;
     border: none;
-    border-radius: 15px; /* Changed from 30% to 15px for rectangular shape */
-    padding: 0.5rem 1rem; /* Reduced padding for less space between text and edges */
-    margin: 0.25rem; /* Added small margin to prevent cutting off */
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    margin: 0.15rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.bubble:hover {
+    background-color: #00796b;
+}
+
+.switch-label {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+sl-switch {
+    --indicator-background-color: #009688;
+    --indicator-color: #fff;
+    --track-background-color: #ccc;
+    --track-color: #fff;
+    --track-border-radius: 15px;
+    --track-height: 24px;
+    --track-width: 48px;
+    --focus-ring-color: #009688;
+    text-align: center;
+}
+
+/* Tooltip styling */
+sl-tooltip::part(base) {
+    background-color: #009688;
+    color: white;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+}
+
+sl-tooltip::part(arrow) {
+    color: #009688;
 }
 
 .bubble:hover {
@@ -341,21 +378,6 @@ sl-progress-bar {
     width: 100%;
     margin-top: 1rem;
     --indicator-color: #ff7043; /* Coral orange progress bar */
-}
-
-sl-tab-group {
-    margin-top: 2rem;
-    --indicator-color: #ff7043; /* Coral orange active tab */
-}
-
-sl-tooltip {
-    margin-top: 1rem;
-    --tooltip-background-color: #ff7043; /* Coral orange tooltip */
-}
-
-sl-switch::part(base) {
-    margin-top: 1rem;
-    --thumb-color: #ff7043; /* Coral orange switch */
 }
 
 /* Responsive Design */

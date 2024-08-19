@@ -112,22 +112,16 @@ function initItineraryForm() {
     const form = document.getElementById('itinerary-form');
     const confirmationMessage = document.getElementById('confirmation-message');
     const submitButton = document.getElementById('submit-btn');
-    const switchElement = document.getElementById('confirm-switch');
+    const descriptor = document.getElementById('itinerary-descriptor');
 
     // Handle form submission
     submitButton.addEventListener('click', function (event) {
         event.preventDefault();
-
-        // Check if the switch is toggled on before allowing form submission
-        if (switchElement.checked) {
-            form.style.display = 'none';
-            confirmationMessage.style.display = 'block';
-        } else {
-            alert('Please confirm your itinerary before submitting.');
-        }
+        form.style.display = 'none';
+        descriptor.style.display = 'none';
+        confirmationMessage.style.display = 'block';
     });
 }
-
 
 /**
  * Main initialisation function.
