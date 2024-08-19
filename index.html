@@ -37,6 +37,9 @@
 
 <section id="gallery">
     <h2 class="gallery-title">Gallery</h2>
+    <p class="descriptor" id="gallery-descriptor">Explore the stunning beauty of North Queensland through our curated
+        gallery. Each image captures the essence of our region's natural wonders. Browse through these breathtaking
+        scenes and get inspired for your next adventure!</p>
     <div class="gallery-container">
         <ul class="image-gallery">
             <li>
@@ -179,10 +182,16 @@
             <sl-switch id="guided-tours-switch"></sl-switch>
         </sl-tooltip>
 
-        <sl-button type="primary" id="submit-btn">Send</sl-button>
+        <button type="submit" id="submit-btn">Send</button>
     </form>
 
     <div id="confirmation-message" style="display: none;">
+        <div class="checkmark-wrapper">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="checkmark__check" fill="none" d="M14 27l6 6L38 15"/>
+            </svg>
+        </div>
         <p>Thank you for creating your itinerary! We will send you the details shortly.</p>
     </div>
 </section>
