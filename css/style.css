@@ -334,6 +334,16 @@ label {
     background-color: #00796b;
 }
 
+.bubble.selected {
+    background-color: #ff7043;
+    color: white;
+    border: 2px solid #00796b;
+    transform: scale(1.15) rotate(3deg); /* Slight rotation for a dynamic feel */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out,
+        box-shadow 0.5s ease-in-out;
+}
+
 .switch-label {
     display: inline-block;
     margin-right: 1rem;

@@ -113,6 +113,7 @@ function initItineraryForm() {
     const confirmationMessage = document.getElementById('confirmation-message');
     const submitButton = document.getElementById('submit-btn');
     const descriptor = document.getElementById('itinerary-descriptor');
+    const bubbles = document.querySelectorAll('.bubble');
 
     // Handle form submission
     submitButton.addEventListener('click', function (event) {
@@ -120,6 +121,12 @@ function initItineraryForm() {
         form.style.display = 'none';
         descriptor.style.display = 'none';
         confirmationMessage.style.display = 'block';
+    });
+
+    bubbles.forEach(bubble => {
+        bubble.addEventListener('click', function () {
+            this.classList.toggle('selected');
+        });
     });
 }
 
