@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {x: '-100%'},  // Start position (off-screen to the left)
             {
                 x: '0%',  // End position (original position)
-                duration: 2,
+                duration: 2.5,
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: carouselContainer,
