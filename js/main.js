@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             y: 50,
             opacity: 0,
-            duration: 1
+            duration: 3
         });
     });
 
@@ -78,6 +78,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         );
     }
+
+    // Animate bubble selectors
+    gsap.utils.toArray('.bubble').forEach(bubble => {
+        gsap.fromTo('.bubble',
+            {opacity: 0, y: 50},
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'power2.out',
+                stagger: 0.2, // Adjust the time between each bubble's animation
+                scrollTrigger: {
+                    trigger: '#itinerary',
+                    start: 'top 80%',
+                    end: 'top 20%',
+                    toggleActions: 'play none none reverse',
+                }
+            }
+        );
+    });
 });
 
 // Content functions and initialisations
