@@ -305,5 +305,6 @@ function init() {
     initHeroButton();
 }
 
-// Waits for the DOM to fully load before initializing
+// Waits for the DOM to fully load before initialising
 document.addEventListener('DOMContentLoaded', init);
+z
