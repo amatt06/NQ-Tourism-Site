@@ -2,54 +2,78 @@
 <html lang="en">
 
 <head>
+    <!-- Character encoding for the document -->
     <meta charset="UTF-8">
+    <!-- Viewport settings for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Document title -->
     <title>North Queensland Tourism</title>
+
+    <!-- Link to external CSS stylesheet -->
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- GSAP (GreenSock Animation Platform) core library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- GSAP ScrollTrigger plugin for scroll-based animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Shoelace CSS for UI components styling -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css">
+
+    <!-- Link to the main JavaScript file for functionality -->
     <script src="./js/main.js"></script>
+
+    <!-- Shoelace autoloader script for component support -->
     <script type="module"
             src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+
+    <!-- Preconnect to Google Fonts for performance optimisation -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Link to Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
           rel="stylesheet">
 </head>
 
 <body>
+<!-- Header section containing navigation -->
 <header>
     <nav>
         <ul>
+            <!-- Navigation links with smooth scrolling -->
             <li><a href="#hero">Home</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#experiences">Experiences</a></li>
             <li><a href="#itinerary">Itinerary</a></li>
         </ul>
+        <!-- Navigation indicator for highlighting the active section -->
         <div id="nav-indicator"></div>
     </nav>
 </header>
 
+<!-- Hero section with a call-to-action -->
 <section id="hero">
     <h1>Visit North Queensland</h1>
     <p id="sub-heading">Create Your Dream Itinerary</p>
     <a href="#itinerary" id="hero-button">Get Started</a>
 </section>
 
+<!-- Gallery section showcasing images of North Queensland -->
 <section id="gallery">
     <h2 class="gallery-title">Gallery</h2>
-    <p class="descriptor" id="gallery-descriptor">Explore the stunning beauty of North Queensland through our
-        curated
-        gallery. Each image captures the essence of our region's natural wonders. Browse through these breathtaking
-        scenes and get inspired for your next adventure!</p>
+    <p class="descriptor" id="gallery-descriptor">
+        Explore the stunning beauty of North Queensland through our curated gallery. Each image captures the essence of
+        our region's natural wonders. Browse through these breathtaking scenes and get inspired for your next adventure!
+    </p>
     <div class="gallery-container">
         <ul class="image-gallery">
+            <!-- Individual gallery items -->
             <li>
                 <img src="./img/reef.jpeg" alt="Great Barrier Reef">
                 <h3>Great Barrier Reef</h3>
-                <p>Dive into the Great Barrier Reef, a vibrant underwater world with stunning coral and diverse
-                    marine
+                <p>Dive into the Great Barrier Reef, a vibrant underwater world with stunning coral and diverse marine
                     life.</p>
             </li>
             <li>
@@ -77,34 +101,31 @@
             <li>
                 <img src="./img/whitsundays.jpeg" alt="Whitsunday Islands">
                 <h3>Whitsunday Islands</h3>
-                <p>Sail through the Whitsunday Islands, home to pristine beaches and crystal-clear turquoise waters.
-                </p>
+                <p>Sail through the Whitsunday Islands, home to pristine beaches and crystal-clear turquoise waters.</p>
             </li>
-
         </ul>
+        <!-- Button to navigate through the gallery -->
         <button class="next">&#10132;</button>
     </div>
 
-    <!-- Progress bar -->
+    <!-- Progress bar for gallery navigation -->
     <sl-progress-bar class="gallery-progress" value="0"></sl-progress-bar>
 </section>
 
+<!-- Experiences section with traveler testimonials -->
 <section id="experiences">
     <h2 class="experiences-title">Experiences</h2>
-    <p id="experiences-descriptor" class="descriptor">Discover firsthand accounts from travelers who have explored
-        the
-        wonders of North Queensland.</p>
+    <p id="experiences-descriptor" class="descriptor">
+        Discover firsthand accounts from travelers who have explored the wonders of North Queensland.
+    </p>
     <div class="experiences-grid">
-
-        <!-- Experience 1 -->
+        <!-- Individual experience items -->
         <div class="experience-item">
             <img src="./img/experiences/gbr.png" alt="Great Barrier Reef">
             <div class="testimonial">
                 "An unforgettable adventure! The vibrant marine life at the Great Barrier Reef was breathtaking."
             </div>
         </div>
-
-        <!-- Experience 2 -->
         <div class="experience-item">
             <img src="./img/experiences/daintree.png" alt="Daintree Rainforest">
             <div class="testimonial">
@@ -112,41 +133,37 @@
                 stunning."
             </div>
         </div>
-
-        <!-- Experience 3 -->
         <div class="experience-item">
             <img src="./img/experiences/cape-trib.png" alt="Cape Tribulation">
             <div class="testimonial">
                 "The tranquility of Cape Tribulation is unmatched. The perfect place to unwind and enjoy nature."
             </div>
         </div>
-
-        <!-- Experience 4 -->
         <div class="experience-item">
             <img src="./img/experiences/atherton-tb.png" alt="Atherton Tablelands">
             <div class="testimonial">
                 "The waterfalls in the Atherton Tablelands were a highlight of our trip. A photographer’s paradise!"
             </div>
         </div>
-
-        <!-- Experience 5 -->
         <div class="experience-item">
             <img src="./img/experiences/ws-islands.png" alt="Whitsunday Islands">
             <div class="testimonial">
-                "Sailing through the Whitsunday Islands was a dream come true. The white sand beaches are
-                incredible."
+                "Sailing through the Whitsunday Islands was a dream come true. The white sand beaches are incredible."
             </div>
         </div>
-
     </div>
 </section>
 
+<!-- Itinerary section with form for personalised travel planning -->
 <section id="itinerary">
     <h2 class="itinerary-title">Your Itinerary</h2>
-    <p id="itinerary-descriptor" class="descriptor">Get your personalised travel itinerary!</p>
+    <p id="itinerary-descriptor" class="descriptor">
+        Get your personalised travel itinerary!
+    </p>
     <form id="itinerary-form">
         <p>Select Locations:</p>
         <div id="locations">
+            <!-- Location selection buttons -->
             <button type="button" class="bubble" data-location="Great Barrier Reef">Great Barrier Reef</button>
             <button type="button" class="bubble" data-location="Daintree Rainforest">Daintree Rainforest</button>
             <button type="button" class="bubble" data-location="Magnetic Island">Magnetic Island</button>
@@ -157,6 +174,7 @@
             <button type="button" class="bubble" data-location="Cape Tribulation">Cape Tribulation</button>
         </div>
 
+        <!-- Form fields for user input -->
         <label for="people">Number of People:</label>
         <input type="number" id="people" name="people" min="1" max="20" required>
 
@@ -173,9 +191,11 @@
             <sl-switch id="guided-tours-switch"></sl-switch>
         </sl-tooltip>
 
+        <!-- Submit button for the form -->
         <button type="submit" id="submit-btn">Send</button>
     </form>
 
+    <!-- Confirmation message displayed upon form submission -->
     <div id="confirmation-message" style="display: none;">
         <audio id="confirmation-sound" src="./audio/confirmation.mp3" preload="auto"></audio>
         <div class="checkmark-wrapper">
@@ -188,6 +208,7 @@
     </div>
 </section>
 
+<!-- Footer section with copyright notice -->
 <footer>
     <p>&copy; 2024 Adam Matthews - DIG24 Assignment 3</p>
 </footer>

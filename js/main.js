@@ -1,40 +1,35 @@
 // main.js
 
-// Ensure gsap and ScrollTrigger are included
-if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    throw new Error('gsap or ScrollTrigger is not defined. Please include the GSAP library.');
-}
-
 // GSAP Implementation
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Create ScrollTrigger instance for the hero section
+    // Create a ScrollTrigger instance for the hero section
     ScrollTrigger.create({
         trigger: '#hero',
-        start: 'top 60%', // Starts when the top of the hero section is 60% down the viewport
-        end: 'bottom 40%', // Ends when the bottom of the hero section is 40% down the viewport
+        start: 'top 60%', // Animation starts when the top of the hero section is 60% down the viewport
+        end: 'bottom 40%', // Animation ends when the bottom of the hero section is 40% down the viewport
         onEnter: function () {
-            // Animate h1 heading
+            // Animate the main heading (h1)
             gsap.fromTo('h1',
                 {opacity: 0, y: -50},
                 {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.2}
             );
 
-            // Animate sub-heading with a slight delay
+            // Animate the sub-heading with a slight delay
             gsap.fromTo('#sub-heading',
                 {opacity: 0, y: 30},
                 {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.4}
             );
         },
         onLeaveBack: function () {
-            // Reset the properties when the user scrolls back up
-            gsap.set('h1', {clearProps: 'opacity,y'});
-            gsap.set('#sub-heading', {clearProps: 'opacity,y'});
-            gsap.set('.hero-button', {clearProps: 'opacity,scale'});
+            // Reset properties when scrolling back up
+            gsap.set('h1', {clearProps: 'opacity, y'});
+            gsap.set('#sub-heading', {clearProps: 'opacity, y'});
+            gsap.set('.hero-button', {clearProps: 'opacity, scale'});
         },
         onEnterBack: function () {
-            // Replay the animations when scrolling back into view
+            // Replay animations when scrolling back into view
             gsap.fromTo('h1',
                 {opacity: 0, y: -50},
                 {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.2}
@@ -47,14 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Section headings (h2) animation
+    // Animate section headings (h2)
     gsap.utils.toArray('h2').forEach(function (h2) {
         gsap.from(h2, {
             scrollTrigger: {
                 trigger: h2,
                 start: 'top 75%',
                 end: 'bottom 25%',
-                scrub: true,
+                scrub: true, // Smooth animation
                 toggleActions: 'play none none reverse'
             },
             y: 50,
@@ -63,43 +58,43 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Carousel container slide in animation
+    // Carousel container slide-in animation
     var carouselContainer = document.querySelector('.gallery-container');
 
     if (carouselContainer) {
         gsap.fromTo(carouselContainer,
-            {x: '-100%'},  // Start position (off-screen to the left)
+            {x: '-100%'},  // Animation starts with the container off-screen to the left
             {
-                x: '0%',  // End position (original position)
+                x: '0%',  // Animation ends with the container in its original position
                 duration: 2.5,
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: carouselContainer,
-                    start: 'top 80%',  // Start animation when the top of the carousel container is 80% from the top of the viewport
+                    start: 'top 80%',  // Animation starts when the top of the container is 80% down the viewport
                     end: 'top 20%',
                     scrub: true,  // Smooth animation
-                    toggleActions: 'play none none reverse'  // Replays the animation when scrolling back
+                    toggleActions: 'play none none reverse'  // Replays animation when scrolling back
                 }
             }
         );
     }
 
-    // Carousel container slide in animation
+    // Experiences container slide-in animation
     var experiencesContainer = document.querySelector('.experiences-grid');
 
     if (experiencesContainer) {
         gsap.fromTo(experiencesContainer,
-            {x: '100%'},  // Start position (off-screen to the right)
+            {x: '100%'},  // Animation starts with the container off-screen to the right
             {
-                x: '0%',  // End position (original position)
+                x: '0%',  // Animation ends with the container in its original position
                 duration: 2.5,
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: experiencesContainer,
-                    start: 'top 80%',  // Start animation when the top of the carousel container is 80% from the top of the viewport
+                    start: 'top 80%',  // Animation starts when the top of the container is 80% down the viewport
                     end: 'top 20%',
                     scrub: true,  // Smooth animation
-                    toggleActions: 'play none none reverse'  // Replays the animation when scrolling back
+                    toggleActions: 'play none none reverse'  // Replays animation when scrolling back
                 }
             }
         );
@@ -126,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Content functions and initialisations
+// Content functions and initializations
 
 // Utility function to debounce events
 function debounce(func, wait, immediate) {
@@ -181,7 +176,7 @@ function updateNavIndicator() {
     var currentSection = '';
     var maxVisibleHeight = 0;
 
-    // Determine which section is mostly visible
+    // Determine which section is mostly visible in the viewport
     sections.forEach(function (section) {
         var rect = section.getBoundingClientRect();
         var visibleHeight = Math.min(window.innerHeight, rect.bottom) - Math.max(0, rect.top);
@@ -192,7 +187,7 @@ function updateNavIndicator() {
         }
     });
 
-    // Update the navigation links and indicator
+    // Update the navigation links and indicator position
     navLinks.forEach(function (link) {
         link.classList.remove('active');
         if (link.getAttribute('href').substring(1) === currentSection) {
@@ -205,8 +200,8 @@ function updateNavIndicator() {
     });
 }
 
+// Smooth scroll initialisation for the hero button
 function initHeroButton() {
-    // Smooth scroll for hero button
     var heroButton = document.getElementById('hero-button');
     if (heroButton) {
         heroButton.addEventListener('click', function (e) {
@@ -231,12 +226,14 @@ function initNavIndicator() {
     });
 }
 
+// Initialises the carousel functionality
 function initCarousel() {
     var nextButton = document.querySelector('.next');
     var gallery = document.querySelector('.image-gallery');
     var progressBar = document.querySelector('sl-progress-bar');
     var scrollPosition = 0;
 
+    // Determines the number of visible images based on window width
     function getVisibleImages() {
         if (window.innerWidth <= 480) {
             return 1;
@@ -247,6 +244,7 @@ function initCarousel() {
         }
     }
 
+    // Updates the carousel position and progress bar
     function updateCarousel() {
         var visibleImages = getVisibleImages();
         var imageWidth = gallery.children[0].offsetWidth;
@@ -258,6 +256,7 @@ function initCarousel() {
         progressBar.value = ((scrollPosition + visibleImages) / gallery.children.length) * 100;
     }
 
+    // Handles the next button click to scroll images
     nextButton.addEventListener('click', function () {
         var visibleImages = getVisibleImages();
         if (scrollPosition < gallery.children.length - visibleImages) {
@@ -281,7 +280,7 @@ function initItineraryForm() {
     var bubbles = document.querySelectorAll('.bubble');
     var confirmationSound = document.getElementById('confirmation-sound');
 
-    // Handle form submission
+    // Handles form submission
     submitButton.addEventListener('click', function (event) {
         event.preventDefault();
         form.style.display = 'none';
@@ -290,6 +289,7 @@ function initItineraryForm() {
         confirmationSound.play();
     });
 
+    // Toggles bubble selection
     bubbles.forEach(function (bubble) {
         bubble.addEventListener('click', function () {
             this.classList.toggle('selected');
@@ -305,5 +305,5 @@ function init() {
     initHeroButton();
 }
 
-// Wait for the DOM to fully load before initialising
+// Waits for the DOM to fully load before initializing
 document.addEventListener('DOMContentLoaded', init);
