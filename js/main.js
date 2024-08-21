@@ -12,32 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
         onEnter: () => {
             // Animate h1 heading
             gsap.fromTo('h1',
-                {opacity: 0, y: -50},
-                {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.2}
+                { opacity: 0, y: -50 },
+                { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.2 }
             );
 
             // Animate sub-heading with a slight delay
             gsap.fromTo('#sub-heading',
-                {opacity: 0, y: 30},
-                {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.4}
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.4 }
             );
         },
         onLeaveBack: () => {
             // Reset the properties when the user scrolls back up
-            gsap.set('h1', {clearProps: 'opacity,y'});
-            gsap.set('#sub-heading', {clearProps: 'opacity,y'});
-            gsap.set('.hero-button', {clearProps: 'opacity,scale'});
+            gsap.set('h1', { clearProps: 'opacity,y' });
+            gsap.set('#sub-heading', { clearProps: 'opacity,y' });
+            gsap.set('.hero-button', { clearProps: 'opacity,scale' });
         },
         onEnterBack: () => {
             // Replay the animations when scrolling back into view
             gsap.fromTo('h1',
-                {opacity: 0, y: -50},
-                {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.2}
+                { opacity: 0, y: -50 },
+                { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.2 }
             );
 
             gsap.fromTo('#sub-heading',
-                {opacity: 0, y: 30},
-                {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.4}
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.4 }
             );
         },
     });
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (carouselContainer) {
         gsap.fromTo(carouselContainer,
-            {x: '-100%'},  // Start position (off-screen to the left)
+            { x: '-100%' },  // Start position (off-screen to the left)
             {
                 x: '0%',  // End position (original position)
                 duration: 2.5,
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (experiencesContainer) {
         gsap.fromTo(experiencesContainer,
-            {x: '100%'},  // Start position (off-screen to the right)
+            { x: '100%' },  // Start position (off-screen to the right)
             {
                 x: '0%',  // End position (original position)
                 duration: 2.5,
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animate bubble selectors
     gsap.utils.toArray('.bubble').forEach(bubble => {
         gsap.fromTo('.bubble',
-            {opacity: 0, y: 50},
+            { opacity: 0, y: 50 },
             {
                 opacity: 1,
                 y: 0,
