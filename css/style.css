@@ -305,6 +305,11 @@ button.next:hover {
     min-height: 60vh;
 }
 
+#itinerary-form > p {
+    font-size: 1.2rem;
+    padding: 0;
+}
+
 .itinerary-title {
     font-size: 2.8rem;
     color: #009688;
@@ -363,7 +368,6 @@ label {
 input {
     border-radius: 7px;
     height: 40px;
-    /* Slightly taller for better accessibility */
     font-size: 1rem;
     font-family: "Josefin Sans", sans-serif;
     padding: 0 1rem;
