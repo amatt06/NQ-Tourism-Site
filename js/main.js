@@ -79,6 +79,27 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     }
 
+    // Carousel container slide in animation
+    const experiencesContainer = document.querySelector('.experiences-grid');
+
+    if (experiencesContainer) {
+        gsap.fromTo(experiencesContainer,
+            {x: '100%'},  // Start position (off-screen to the right)
+            {
+                x: '0%',  // End position (original position)
+                duration: 2.5,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: experiencesContainer,
+                    start: 'top 80%',  // Start animation when the top of the carousel container is 80% from the top of the viewport
+                    end: 'top 20%',
+                    scrub: ease(),  // Smooth animation
+                    toggleActions: 'play none none reverse',  // Replays the animation when scrolling back
+                }
+            }
+        );
+    }
+
     // Animate bubble selectors
     gsap.utils.toArray('.bubble').forEach(bubble => {
         gsap.fromTo('.bubble',
@@ -256,6 +277,7 @@ function initItineraryForm() {
     const submitButton = document.getElementById('submit-btn');
     const descriptor = document.getElementById('itinerary-descriptor');
     const bubbles = document.querySelectorAll('.bubble');
+    const confirmationSound = document.getElementById('confirmation-sound');
 
     // Handle form submission
     submitButton.addEventListener('click', function (event) {
@@ -263,6 +285,7 @@ function initItineraryForm() {
         form.style.display = 'none';
         descriptor.style.display = 'none';
         confirmationMessage.style.display = 'block';
+        confirmationSound.play();
     });
 
     bubbles.forEach(bubble => {
