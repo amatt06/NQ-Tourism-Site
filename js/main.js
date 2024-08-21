@@ -1,5 +1,65 @@
 // main.js
 
+// Ensure GSAP and ScrollTrigger are registered
+gsap.registerPlugin(ScrollTrigger);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Create ScrollTrigger instance for the hero section
+    ScrollTrigger.create({
+        trigger: '#hero',
+        start: 'top 60%', // Starts when the top of the hero section is 60% down the viewport
+        end: 'bottom 40%', // Ends when the bottom of the hero section is 40% down the viewport
+        onEnter: () => {
+            // Animate h1 heading
+            gsap.fromTo('h1',
+                {opacity: 0, y: -50},
+                {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.2}
+            );
+
+            // Animate sub-heading with a slight delay
+            gsap.fromTo('#sub-heading',
+                {opacity: 0, y: 30},
+                {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.4}
+            );
+        },
+        onLeaveBack: () => {
+            // Reset the properties when the user scrolls back up
+            gsap.set('h1', {clearProps: 'opacity,y'});
+            gsap.set('#sub-heading', {clearProps: 'opacity,y'});
+            gsap.set('.hero-button', {clearProps: 'opacity,scale'});
+        },
+        onEnterBack: () => {
+            // Replay the animations when scrolling back into view
+            gsap.fromTo('h1',
+                {opacity: 0, y: -50},
+                {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.2}
+            );
+
+            gsap.fromTo('#sub-heading',
+                {opacity: 0, y: 30},
+                {opacity: 1, y: 0, duration: 1.5, ease: 'power2.out', delay: 0.4}
+            );
+        },
+    });
+
+    // Section headings (h2) animation
+    gsap.utils.toArray('h2').forEach(h2 => {
+        gsap.from(h2, {
+            scrollTrigger: {
+                trigger: h2,
+                start: 'top 75%',
+                end: 'bottom 25%',
+                scrub: true,
+                toggleActions: 'play none none reverse',
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1
+        });
+    });
+});
+
+// Content functions and initialisations
 /**
  * Utility function to debounce events.
  * Delays the processing of the event handler until after a specified wait time has elapsed since the last event.
@@ -108,23 +168,26 @@ function initCarousel() {
     const nextButton = document.querySelector('.next');
     const gallery = document.querySelector('.image-gallery');
     const progressBar = document.querySelector('sl-progress-bar');
-
     let scrollPosition = 0;
 
     function getVisibleImages() {
         if (window.innerWidth <= 480) {
-            return 1; // Mobile screens show 1 image
+            return 1;
         } else if (window.innerWidth <= 768) {
-            return 2; // Smaller screens show 2 images
+            return 2;
         } else {
-            return 3; // Desktop screens show 3 images
+            return 3;
         }
     }
 
     function updateCarousel() {
         const visibleImages = getVisibleImages();
         const imageWidth = gallery.children[0].offsetWidth;
-        gallery.style.transform = `translateX(-${scrollPosition * imageWidth}px)`;
+        gsap.to(gallery, {
+            x: -scrollPosition * imageWidth,
+            duration: 0.1,
+            ease: 'power2.out',
+        });
         progressBar.value = ((scrollPosition + visibleImages) / gallery.children.length) * 100;
     }
 
@@ -133,13 +196,12 @@ function initCarousel() {
         if (scrollPosition < gallery.children.length - visibleImages) {
             scrollPosition++;
         } else {
-            scrollPosition = 0; // Go back to the first image
+            scrollPosition = 0;
         }
         updateCarousel();
     });
 
     window.addEventListener('resize', updateCarousel);
-
     updateCarousel();
 }
 

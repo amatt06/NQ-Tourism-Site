@@ -412,7 +412,7 @@ input:focus {
     stroke-width: 3;
     stroke-dasharray: 157;
     stroke-dashoffset: 157;
-    animation: dash 0.9s ease forwards;
+    animation: dash 1.2s ease forwards;
     fill: none;
 }
 
@@ -421,7 +421,7 @@ input:focus {
     stroke-width: 3;
     stroke-linecap: round;
     stroke-linejoin: round;
-    animation: draw 0.6s ease forwards;
+    animation: draw 0.9s ease forwards;
     fill: none;
 }
 
