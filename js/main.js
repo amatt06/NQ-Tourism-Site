@@ -168,18 +168,27 @@ function smoothScroll(target, duration) {
     requestAnimationFrame(animation);
 }
 
-// Updates the position and width of the navigation indicator
 function updateNavIndicator() {
-    var sections = document.querySelectorAll('section');
-    var navLinks = document.querySelectorAll('nav ul li a');
-    var navIndicator = document.getElementById('nav-indicator');
-    var currentSection = '';
-    var maxVisibleHeight = 0;
+    const sections = document.querySelectorAll('section');
+    const isSmallScreen = window.innerWidth <= 768;
+    const navIndicator = document.getElementById('nav-indicator');
+
+    // Hide the indicator on small screens
+    if (isSmallScreen) {
+        navIndicator.style.display = 'none';
+        return; // Exit early, no need to update on small screens
+    } else {
+        navIndicator.style.display = 'block';
+    }
+
+    const navLinks = document.querySelectorAll('#main-nav ul li a');
+    let currentSection = '';
+    let maxVisibleHeight = 0;
 
     // Determine which section is mostly visible in the viewport
     sections.forEach(function (section) {
-        var rect = section.getBoundingClientRect();
-        var visibleHeight = Math.min(window.innerHeight, rect.bottom) - Math.max(0, rect.top);
+        const rect = section.getBoundingClientRect();
+        const visibleHeight = Math.min(window.innerHeight, rect.bottom) - Math.max(0, rect.top);
 
         if (visibleHeight > maxVisibleHeight) {
             maxVisibleHeight = visibleHeight;
@@ -192,8 +201,8 @@ function updateNavIndicator() {
         link.classList.remove('active');
         if (link.getAttribute('href').substring(1) === currentSection) {
             link.classList.add('active');
-            var rect = link.getBoundingClientRect();
-            var navRect = link.parentElement.parentElement.getBoundingClientRect();
+            const rect = link.getBoundingClientRect();
+            const navRect = link.parentElement.parentElement.getBoundingClientRect();
             navIndicator.style.width = rect.width + 'px';
             navIndicator.style.left = (rect.left - navRect.left) + 'px';
         }
@@ -217,10 +226,12 @@ function initNavIndicator() {
     window.addEventListener('resize', debounce(updateNavIndicator));
     updateNavIndicator();
 
-    document.querySelectorAll('nav ul li a').forEach(function (anchor) {
+    const navLinks = document.querySelectorAll('nav ul li a'); // Select both main and burger menu links
+
+    navLinks.forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            var targetId = this.getAttribute('href');
+            const targetId = this.getAttribute('href');
             smoothScroll(targetId, 1200);
         });
     });
