@@ -239,15 +239,15 @@ function initNavIndicator() {
 
 // Initialises the burger menu for smaller screens
 function initBurgerMenu() {
-    const burgerMenu = document.getElementById('burger-menu');
-    const sideNav = document.getElementById('side-nav');
+    var burgerMenu = document.getElementById('burger-menu');
+    var sideNav = document.getElementById('side-nav');
 
-    burgerMenu.addEventListener('click', () => {
+    burgerMenu.addEventListener('click', function () {
         sideNav.classList.toggle('open');
     });
 
     // Close the side nav when a link is clicked
-    sideNav.addEventListener('click', (e) => {
+    sideNav.addEventListener('click', function (e) {
         if (e.target.tagName === 'A') {
             sideNav.classList.remove('open');
         }
@@ -336,4 +336,3 @@ function init() {
 
 // Waits for the DOM to fully load before initialising
 document.addEventListener('DOMContentLoaded', init);
-z
