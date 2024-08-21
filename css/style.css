@@ -124,7 +124,7 @@ footer {
     color: #F5F5DE;
 }
 
-.hero-button {
+#hero-button {
     background-color: transparent;
     color: #F5F5DE;
     border: 5px solid #F5F5DE;
@@ -139,11 +139,11 @@ footer {
     text-decoration: none;
 }
 
-.hero-button:hover {
+#hero-button:hover {
     transform: scale(1.05);
 }
 
-.hero-button:focus {
+#hero-button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 150, 136, 0.3);
 }
@@ -503,7 +503,7 @@ input:focus {
         font-size: 1rem;
     }
 
-    .hero-button {
+    #hero-button {
         background-color: #F5F5DE;
         color: #ff7043;
         border-color: #ff7043;
@@ -519,7 +519,7 @@ input:focus {
         text-align: center;
     }
 
-    .hero-button {
+    #hero-button {
         background-color: #F5F5DE;
         color: #ff7043;
         border-color: #ff7043;
