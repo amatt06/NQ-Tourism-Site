@@ -136,6 +136,7 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-family: "Josefin Sans", sans-serif;
+    text-decoration: none;
 }
 
 .hero-button:hover {
