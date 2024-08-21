@@ -57,6 +57,27 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 1
         });
     });
+
+    // Carousel container slide in animation
+    const carouselContainer = document.querySelector('.gallery-container');
+
+    if (carouselContainer) {
+        gsap.fromTo(carouselContainer,
+            {x: '-100%'},  // Start position (off-screen to the left)
+            {
+                x: '0%',  // End position (original position)
+                duration: 2,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: carouselContainer,
+                    start: 'top 80%',  // Start animation when the top of the carousel container is 80% from the top of the viewport
+                    end: 'top 20%',
+                    scrub: ease(),  // Smooth animation
+                    toggleActions: 'play none none reverse',  // Replays the animation when scrolling back
+                }
+            }
+        );
+    }
 });
 
 // Content functions and initialisations
@@ -165,27 +186,6 @@ function initNavIndicator() {
 }
 
 function initCarousel() {
-    const carouselContainer = document.querySelector('.gallery-container');
-
-    // Ensure the carousel container exists
-    if (carouselContainer) {
-        gsap.fromTo(carouselContainer,
-            {x: '-100%'},  // Start position (off-screen to the left)
-            {
-                x: '0%',  // End position (original position)
-                duration: 2,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: carouselContainer,
-                    start: 'top 80%',  // Start animation when the top of the carousel container is 80% from the top of the viewport
-                    end: 'top 20%',
-                    scrub: ease(),  // Smooth animation
-                    toggleActions: 'play none none reverse',  // Replays the animation when scrolling back
-                }
-            }
-        );
-    }
-
     const nextButton = document.querySelector('.next');
     const gallery = document.querySelector('.image-gallery');
     const progressBar = document.querySelector('sl-progress-bar');
