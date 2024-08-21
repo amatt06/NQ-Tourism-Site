@@ -40,7 +40,15 @@
 <body>
 <!-- Header section containing navigation -->
 <header>
-    <nav>
+    <!-- Burger Menu Icon for small screens -->
+    <div class="burger-menu" id="burger-menu">
+        <div class="burger-icon"></div>
+        <div class="burger-icon"></div>
+        <div class="burger-icon"></div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav id="main-nav">
         <ul>
             <!-- Navigation links with smooth scrolling -->
             <li><a href="#hero">Home</a></li>
@@ -51,7 +59,18 @@
         <!-- Navigation indicator for highlighting the active section -->
         <div id="nav-indicator"></div>
     </nav>
+
+    <!-- Side Navigation Menu (hidden by default) -->
+    <nav id="side-nav">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#itinerary">Itinerary</a></li>
+        </ul>
+    </nav>
 </header>
+
 
 <!-- Hero section with a call-to-action -->
 <section id="hero">

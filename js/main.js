@@ -226,6 +226,23 @@ function initNavIndicator() {
     });
 }
 
+// Initialises the burger menu for smaller screens
+function initBurgerMenu() {
+    const burgerMenu = document.getElementById('burger-menu');
+    const sideNav = document.getElementById('side-nav');
+
+    burgerMenu.addEventListener('click', () => {
+        sideNav.classList.toggle('open');
+    });
+
+    // Close the side nav when a link is clicked
+    sideNav.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            sideNav.classList.remove('open');
+        }
+    });
+}
+
 // Initialises the carousel functionality
 function initCarousel() {
     var nextButton = document.querySelector('.next');
@@ -303,6 +320,7 @@ function init() {
     initItineraryForm();
     initCarousel();
     initHeroButton();
+    initBurgerMenu();
 }
 
 // Waits for the DOM to fully load before initialising

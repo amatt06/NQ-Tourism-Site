@@ -103,6 +103,70 @@ nav ul li a:hover {
     border-radius: 17%; /* Rounded corners */
 }
 
+/* Burger Menu Styles */
+.burger-menu {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001; /* Ensure it's above other content */
+}
+
+.burger-icon {
+    width: 25px;
+    height: 3px;
+    background: #1E1E1E;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Side Navigation Styles */
+#side-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: #F5F5DE;
+    color: #1E1E1E;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#side-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#side-nav ul li {
+    margin: 1rem 0;
+}
+
+#side-nav ul li a {
+    color: #1E1E1E;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+#side-nav ul li a:hover {
+    background: #009688;
+    color: #F5F5DE;
+}
+
+/* Show side-nav when open */
+#side-nav.open {
+    transform: translateX(0);
+}
+
 /* General section styling */
 section {
     padding: 4rem;
@@ -556,6 +620,26 @@ input:focus {
         background-color: #F5F5DE; /* Light background for button */
         color: #ff7043; /* Orange text and border */
         border-color: #ff7043; /* Orange border */
+    }
+
+    /* Show burger menu on small screens */
+    .burger-menu {
+        display: block;
+    }
+
+    /* Hide the default nav */
+    #main-nav {
+        display: none;
+    }
+
+    /* Hide the side-nav by default */
+    #side-nav {
+        transform: translateX(100%);
+    }
+
+    /* Fit the burger in the header */
+    header {
+        min-height: 60px;
     }
 }
 
