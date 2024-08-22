@@ -209,11 +209,13 @@
             <input type="email" id="email" name="email" required>
 
             <!-- Guided Tours Switch with Tooltip -->
-            <sl-tooltip
-                content="Add a guided tour to enhance your travel experience with expert insights and exclusive access.">
+            <sl-tooltip id="tours-tooltip"
+                content="Add a guided tour to enhance your travel experience with expert insights and exclusive access."
+                placement="left-start"> <!-- Adjust placement as needed -->
                 <label class="switch-label">Include Guided Tours</label>
                 <sl-switch id="guided-tours-switch"></sl-switch>
             </sl-tooltip>
+
 
             <!-- Submit button for the form -->
             <button type="submit" id="submit-btn">Send</button>

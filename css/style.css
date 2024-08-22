@@ -598,12 +598,6 @@ input:focus {
     /* Focus shadow */
 }
 
-/* Styling for guided tours switch */
-#guided-tours-switch {
-    text-align: center;
-    /* Center align text */
-}
-
 /* Submit button styling */
 #submit-btn {
     background-color: #009688;
