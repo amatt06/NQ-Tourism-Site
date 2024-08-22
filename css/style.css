@@ -235,15 +235,13 @@ footer {
 
 /* Hero button styling */
 #hero-button {
-    background-color: transparent;
-    /* Transparent background */
-    color: #F5F5DE;
-    /* Light text color */
-    border: 5px solid #F5F5DE;
-    /* Border color */
+    background-color: #F5F5DE;
+    /* Light background for button */
+    color: #ff7043;
+    /* Orange text and border */
     border-radius: 8px;
     /* Rounded corners */
-    padding: 15px 30px;
+    padding: 25px 35px;
     /* Padding */
     margin-top: 2rem;
     font-size: 16px;
@@ -328,7 +326,7 @@ footer {
 
 /* Next button in gallery */
 button.next {
-    background-color: #009688;
+    background-color: #ff7043;
     /* Teal background */
     color: white;
     /* White text */
@@ -356,7 +354,7 @@ button.next {
 
 /* Hover effect for next button */
 button.next:hover {
-    background-color: #00796b;
+    background-color: #b32e05;
     /* Darker teal on hover */
     transform: translateY(-50%) scale(1.1);
     /* Larger on hover */
@@ -768,15 +766,6 @@ input:focus {
         /* Adjust font size */
     }
 
-    #hero-button {
-        background-color: #F5F5DE;
-        /* Light background for button */
-        color: #ff7043;
-        /* Orange text and border */
-        border-color: #ff7043;
-        /* Orange border */
-    }
-
     /* Show burger menu on small screens */
     .burger-menu {
         display: block;
@@ -805,17 +794,16 @@ input:focus {
         /* One image per row */
     }
 
+    h1 {
+        font-size: 40px;
+    }
+
+    #hero>p {
+        font-size: 20px;
+    }
+
     h2 {
         text-align: center;
         /* Center align sub-headings */
-    }
-
-    #hero-button {
-        background-color: #F5F5DE;
-        /* Light background for button */
-        color: #ff7043;
-        /* Orange text and border */
-        border-color: #ff7043;
-        /* Orange border */
     }
 }
