@@ -1,6 +1,6 @@
 // gsap.js
 
-// Register Scroll trigger.
+// Register GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', function () {
